@@ -745,7 +745,7 @@ class TetherClass extends Evented {
       transcribe({top: true, left: true}, pos.page);
     }
 
-    if (!moved) {
+    if (this.options.moveRoot !== false && !moved) {
       let offsetParentIsBody = true;
       let currentNode = this.element.parentNode;
       while (currentNode && currentNode.nodeType === 1 && currentNode.tagName !== 'BODY') {
